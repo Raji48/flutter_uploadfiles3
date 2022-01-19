@@ -1,0 +1,4 @@
+#Wed Jan 05 16:15:46 IST 2022
+base.0=/Users/mac-obs-04/StudioProjects/multiplevideo/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

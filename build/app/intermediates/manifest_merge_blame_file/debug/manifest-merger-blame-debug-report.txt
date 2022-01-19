@@ -1,0 +1,181 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.multiplevideo"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/debug/AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/60b85d32c76f6174d43e445a6aa2cefb/jetified-exoplayer-core-2.14.1/AndroidManifest.xml:24:5-79
+15-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/60b85d32c76f6174d43e445a6aa2cefb/jetified-exoplayer-core-2.14.1/AndroidManifest.xml:24:22-76
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:6:5-75
+16-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:6:22-73
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+20
+21    <application
+21-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:3:4-40:19
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:5:9-43
+25        android:label="multiplevideo"
+25-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:4:9-38
+26        android:supportsRtl="true" >
+26-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:7:18-44
+27        <activity
+27-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:6:9-34:20
+28            android:name="com.example.multiplevideo.MainActivity"
+28-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:7:13-41
+29            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+29-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:10:13-163
+30            android:hardwareAccelerated="true"
+30-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:11:13-47
+31            android:launchMode="singleTop"
+31-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:8:13-43
+32            android:theme="@style/LaunchTheme"
+32-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:9:13-47
+33            android:windowSoftInputMode="adjustResize" >
+33-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:12:13-55
+34
+35            <!--
+36                 Specifies an Android theme to apply to this Activity as soon as
+37                 the Android process has started. This theme is visible to the user
+38                 while the Flutter UI initializes. After that, this theme continues
+39                 to determine the Window background behind the Flutter UI.
+40            -->
+41            <meta-data
+41-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:17:13-20:17
+42                android:name="io.flutter.embedding.android.NormalTheme"
+42-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:18:15-70
+43                android:resource="@style/NormalTheme" />
+43-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:19:15-52
+44            <!--
+45                 Displays an Android View that continues showing the launch screen
+46                 Drawable until Flutter paints its first frame, then this splash
+47                 screen fades out. A splash screen is useful to avoid any visual
+48                 gap between the end of Android's launch screen and the painting of
+49                 Flutter's first frame.
+50            -->
+51            <meta-data
+51-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:26:13-29:17
+52                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+52-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:27:15-79
+53                android:resource="@drawable/launch_background" />
+53-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:28:15-61
+54
+55            <intent-filter>
+55-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:30:13-33:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:31:17-68
+56-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:31:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:32:17-76
+58-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:32:27-74
+59            </intent-filter>
+60        </activity>
+61        <!--
+62             Don't delete the meta-data below.
+63             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+64        -->
+65        <meta-data
+65-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:37:9-39:33
+66            android:name="flutterEmbedding"
+66-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:38:13-44
+67            android:value="2" />
+67-->/Users/mac-obs-04/StudioProjects/multiplevideo/android/app/src/main/AndroidManifest.xml:39:13-30
+68
+69        <provider
+69-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+70            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+70-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
+71            android:authorities="com.example.multiplevideo.flutter.image_provider"
+71-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
+72            android:exported="false"
+72-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+73            android:grantUriPermissions="true" >
+73-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+74            <meta-data
+74-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
+75                android:name="android.support.FILE_PROVIDER_PATHS"
+75-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+76                android:resource="@xml/flutter_image_picker_file_paths" />
+76-->[:image_picker] /Users/mac-obs-04/StudioProjects/multiplevideo/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
+77        </provider>
+78
+79        <activity
+79-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:10-269
+80            android:name="com.amazonaws.mobile.auth.userpools.ForceChangePasswordActivity"
+80-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:152-230
+81            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+81-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:20-90
+82            android:label="@string/title_activity_force_change_password"
+82-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:91-151
+83            android:screenOrientation="portrait" />
+83-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:9:231-267
+84        <activity
+84-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:10-258
+85            android:name="com.amazonaws.mobile.auth.userpools.ForgotPasswordActivity"
+85-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:146-219
+86            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+86-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:20-90
+87            android:label="@string/title_activity_forgot_password"
+87-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:91-145
+88            android:screenOrientation="portrait" />
+88-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:10:220-256
+89        <activity
+89-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:10-242
+90            android:name="com.amazonaws.mobile.auth.userpools.SignUpActivity"
+90-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:138-203
+91            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+91-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:20-90
+92            android:label="@string/title_activity_sign_up"
+92-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:91-137
+93            android:screenOrientation="portrait" />
+93-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:11:204-240
+94        <activity
+94-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:10-235
+95            android:name="com.amazonaws.mobile.auth.userpools.MFAActivity"
+95-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:134-196
+96            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+96-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:20-90
+97            android:label="@string/title_activity_mfa"
+97-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:91-133
+98            android:screenOrientation="portrait" />
+98-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:13:197-233
+99        <activity
+99-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:10-257
+100            android:name="com.amazonaws.mobile.auth.userpools.SignUpConfirmActivity"
+100-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:146-218
+101            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+101-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:20-90
+102            android:label="@string/title_activity_sign_up_confirm"
+102-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:91-145
+103            android:screenOrientation="portrait" />
+103-->[com.amazonaws:aws-android-sdk-auth-userpools:2.16.6] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/8dfa6e77feeeb728a535743e0211fee5/jetified-aws-android-sdk-auth-userpools-2.16.6/AndroidManifest.xml:15:219-255
+104        <activity
+104-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:9-234
+105            android:name="com.amazonaws.mobile.auth.ui.SignInActivity"
+105-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:137-195
+106            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+106-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:19-89
+107            android:label="@string/title_activity_sign_in"
+107-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:90-136
+108            android:screenOrientation="portrait" />
+108-->[com.amazonaws:aws-android-sdk-auth-ui:2.6.10] /Users/mac-obs-04/.gradle/caches/transforms-2/files-2.1/40f32137bb231530989074239b45ce8b/jetified-aws-android-sdk-auth-ui-2.6.10/AndroidManifest.xml:8:196-232
+109    </application>
+110
+111</manifest>

@@ -1,0 +1,8 @@
+com/abhimortal6/simple_s3/SimpleS3Plugin.java
+ com.abhimortal6.simple_s3.SimpleS3Plugin
+ com.abhimortal6.simple_s3.SimpleS3Plugin$1
+ com.abhimortal6.simple_s3.SimpleS3Plugin$2
+ com.abhimortal6.simple_s3.SimpleS3Plugin$Progress
+ com.abhimortal6.simple_s3.SimpleS3Plugin$Transfer
+com/abhimortal6/simple_s3/BuildConfig.java
+ com.abhimortal6.simple_s3.BuildConfig

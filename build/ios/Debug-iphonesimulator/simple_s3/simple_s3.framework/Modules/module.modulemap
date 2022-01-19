@@ -1,0 +1,11 @@
+framework module simple_s3 {
+  umbrella header "simple_s3-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module simple_s3.Swift {
+    header "simple_s3-Swift.h"
+    requires objc
+}
