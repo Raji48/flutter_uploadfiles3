@@ -1,271 +1,4 @@
-// import 'dart:io';
-//
-// import 'package:aws_image_and_vdo_upload/customDialog.dart';
-// import 'package:flutter/material.dart';
-// import 'package:permission_handler/permission_handler.dart';
-// import 'package:image_picker/image_picker.dart';
-// import 'package:path/path.dart' as p;
-// import 'package:uuid/uuid.dart';
-// // import 'package:video_player/video_player.dart';
-//
-// enum PhotoSource { FILE, NETWORK }
-// enum PhotoStatus { LOADING, ERROR, LOADED }
-//
-// class GalleryItem {
-//   GalleryItem({this.id, this.resource, this.isSvg = false});
-//
-//   final String? id;
-//   String? resource;
-//   final bool isSvg;
-// }
-//
-// class ImagePickerWidget extends StatefulWidget {
-//   @override
-//   _ImagePickerWidgetState createState() => _ImagePickerWidgetState();
-// }
-//
-// class _ImagePickerWidgetState extends State<ImagePickerWidget> {
-//   static const Color kErrorRed = Colors.redAccent;
-//   static const Color kDarkGray = Color(0xFFA3A3A3);
-//   static const Color kLightGray = Color(0xFFF1F0F5);
-//   final ImagePicker _picker = ImagePicker();
-//   List<XFile> _photos = <XFile>[];
-//   List<String> _photosUrls = <String>[];
-//   List<PhotoStatus> _photosStatus = <PhotoStatus>[];
-//   List<GalleryItem> _galleryItem = <GalleryItem>[];
-//   final List<PhotoSource> _photosSources = <PhotoSource>[];
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.stretch,
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: <Widget>[
-//           Container(
-//             height: 100,
-//             child: ListView.builder(
-//               scrollDirection: Axis.horizontal,
-//               itemCount: _photos.length + 1,
-//               itemBuilder: (context, index) {
-//                 if (index == 0) {
-//                   return _buildAddPhoto();
-//                 }
-//                 XFile image = _photos[index - 1];
-//                 PhotoSource source = _photosSources[index - 1];
-//                 return Stack(
-//                   children: <Widget>[
-//                     InkWell(
-//                       child: Container(
-//                         margin: EdgeInsets.all(5),
-//                         height: 100,
-//                         width: 100,
-//                         color: kLightGray,
-//                         child: source == PhotoSource.FILE
-//                             ? Image.file(File(image.path))
-//                             : Image.network(_photosUrls[index - 1]),
-//                       ),
-//                     ),
-//
-//                   ],
-//                 );
-//               },
-//             ),
-//           ),
-//           Container(
-//             margin: EdgeInsets.all(16),
-//             child: RaisedButton(
-//               child: Text('Save'),
-//               onPressed: () {},
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-//
-//
-//   // _buildAddPhoto() {
-//   //   return InkWell(
-//   //     child: Container(
-//   //       margin: EdgeInsets.all(5),
-//   //       height: 100,
-//   //       width: 100,
-//   //       color: kDarkGray,
-//   //       child: Center(
-//   //         child: Icon(
-//   //           Icons.add_to_photos,
-//   //           color: kLightGray,
-//   //         ),
-//   //       ),
-//   //     ),
-//   //   );
-//   // }
-//   _buildAddPhoto() {
-//     return InkWell(
-//       onTap: () => _onAddPhotoClicked(context),
-//       child: Container(
-//         margin: EdgeInsets.all(5),
-//         height: 100,
-//         width: 100,
-//         color: kDarkGray,
-//         child: Center(
-//           child: Icon(
-//             Icons.add_to_photos,
-//             color: kLightGray,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-//
-//   _onAddPhotoClicked(context) async {
-//     Permission permission;
-//
-//     if (Platform.isIOS) {
-//       permission = Permission.photos;
-//     } else {
-//       permission = Permission.storage;
-//     }
-//     print(permission);
-//     PermissionStatus permissionStatus = await permission.status;
-//
-//     print(permissionStatus);
-//
-//     if (permissionStatus == PermissionStatus.restricted) {
-//       _showOpenAppSettingsDialog(context);
-//
-//       permissionStatus = await permission.status;
-//
-//       if (permissionStatus != PermissionStatus.granted) {
-//         //Only continue if permission granted
-//         return;
-//       }
-//     }
-//
-//     if (permissionStatus == PermissionStatus.permanentlyDenied) {
-//       _showOpenAppSettingsDialog(context);
-//
-//       permissionStatus = await permission.status;
-//
-//       if (permissionStatus != PermissionStatus.granted) {
-//         //Only continue if permission granted
-//         return;
-//       }
-//     }
-//
-//     // if (permissionStatus == PermissionStatus.unknown) {
-//     //   permissionStatus = await permission.request();
-//     //
-//     //   if (permissionStatus != PermissionStatus.granted) {
-//     //     //Only continue if permission granted
-//     //     return;
-//     //   }
-//     // }
-//
-//     if (permissionStatus == PermissionStatus.denied) {
-//       if (Platform.isIOS) {
-//         _showOpenAppSettingsDialog(context);
-//       } else {
-//
-//         permissionStatus = await permission.request();
-//       }
-//
-//       if (permissionStatus != PermissionStatus.granted) {
-//         //Only continue if permission granted
-//         return;
-//       }
-//     }
-//
-//     if (permissionStatus == PermissionStatus.granted) {
-//       print('Permission granted');
-//       //  File image = await ImagePicker.pickImage(
-//       //   source: ImageSource.gallery,
-//       // ) ;
-//       final  image = await _picker.pickImage(
-//         source: ImageSource.gallery,
-//
-//       );
-//
-//       if (image != null) {
-//         // String fileExtension = basename(image.path);//.extension(image.path);
-//
-//         _galleryItem.add(
-//           GalleryItem(
-//             id: Uuid().v1(),
-//             resource: image.path,
-//             // isSvg: fileExtension.toLowerCase() == ".svg",
-//           ),
-//         );
-//
-//         setState(() {
-//           _photos.add(image);
-//           _photosStatus.add(PhotoStatus.LOADING);
-//           _photosSources.add(PhotoSource.FILE);
-//         });
-//
-//         try {
-//           GenerateImageUrl generateImageUrl = GenerateImageUrl();
-//           await generateImageUrl.call(fileExtension);
-//
-//           String uploadUrl;
-//           if (generateImageUrl.isGenerated != null &&
-//               generateImageUrl.isGenerated) {
-//             uploadUrl = generateImageUrl.uploadUrl;
-//           } else {
-//             throw generateImageUrl.message;
-//           }
-//
-//           bool isUploaded = await uploadFile(context, uploadUrl, image);
-//           if (isUploaded) {
-//             setState(() {
-//               _photosUrls.add(generateImageUrl.downloadUrl);
-//               _photosStatus
-//                   .replaceRange(length - 1, length, [PhotoStatus.LOADED]);
-//             });
-//           }
-//         } catch (e) {
-//           print(e);
-//           setState(() {
-//             _photosStatus[length - 1] = PhotoStatus.ERROR;
-//           });
-//         }
-//
-//       }
-//     }
-//   }
-//
-//   _showOpenAppSettingsDialog(context) {
-//     return CustomDialog.show(
-//       context,
-//       'Permission needed',
-//       'Photos permission is needed to select photos',
-//       'Open settings',
-//       openAppSettings,
-//     );
-//   }
-//   Future<bool> uploadFile(context, String url, File image) async {
-//     try {
-//       UploadFile uploadFile = UploadFile();
-//       await uploadFile.call(url, image);
-//
-//       if (uploadFile.isUploaded != null && uploadFile.isUploaded) {
-//         return true;
-//       } else {
-//         throw uploadFile.message;
-//       }
-//     } catch (e) {
-//       throw e;
-//     }
-//   }
-//
-// }
-//
-//
-// }
 
-
-import 'dart:convert';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
@@ -331,7 +64,6 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
       _userAborted = _paths == null;
     });
   }
-
 
 
   void _logException(String message) {
@@ -487,26 +219,26 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
                               print("pathlist");
                               print(pathlist);
                               print(pathlist.length);
-                              for(int i=0; i < pathlist.length;  i++){
-                                asset = File(pathlist[i]);
-                               _upload(asset!);
-                                 // return result;
+                              // for(int i=0; i < pathlist.length;  i++){
+                              //   asset = File(pathlist[i]);
+                              //  _upload(asset!);
+                              //    // return result;
+                              // //  }
+                              //  // if(x == true) {
+                              //  //   i++;
+                              //  // }
                               //  }
-                               // if(x == true) {
-                               //   i++;
-                               // }
-                               }
-                              // asset = File(path!);
-                            //  _upload(asset!);
+                               asset = File(path!);
+                              _upload(asset!);
                              // List customers = [];
                              //  print("customers");
                              //  print(customers);
                              //  print(customers.length);
-                             //  List<getfiledetails>_a = [
-                             //   getfiledetails(pathlist, 0)
-                             //    ];
-                             //  print("getfiledetails");
-                             //  print(_a);
+                              List<getfiledetails>_a = [
+                               getfiledetails(pathlist, [0,1,2,3])
+                                ];
+                               print("getfiledetails");
+                               print(_a);
                              //  print(getfiledetails);
                               // uploaded == false? _upload(asset!): null;
                               return Column(
@@ -515,11 +247,10 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: ListTile(
                                       title: Text(name,),
-                                    /*  subtitle:StreamBuilder<dynamic>(
+                                      /*subtitle:StreamBuilder<dynamic>(
                                           stream: _simpleS3.getUploadPercentage,
                                           builder: (context, dynamic snapshot) {
                                             // _upload(asset!);
-
                                             _a=[
                                               getfiledetails(pathlist, snapshot.data)
                                             ];
@@ -564,10 +295,16 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
                                     child: StreamBuilder<dynamic>(
                                      // initialData: 0.0,
                                         stream: _simpleS3.getUploadPercentage,
-                                        builder: (context, dynamic snapshot) {
+                                        builder: (context,  snapshot) {
+                                          // snapshot.hasData? _a = [
+                                          //   getfiledetails(pathlist, snapshot.data)
+                                          // ]
+                                          // : print("false");
+                                          // print(_a);
                                          // _upload(asset!);
-                                          print(snapshot.data);
-                                          print(snapshot);
+                                         //  snapshot.hasData?
+                                         //  print(snapshot.data);
+                                         //  print(snapshot);
                                          // double  getperc = snapshot.data == null? 0.0: snapshot.data/ 100;
                                          // print(getperc);
                                          //  if(snapshot.connectionState == ConnectionState.active){
@@ -584,7 +321,7 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
                                             lineWidth: 8.0,
                                             animation: true,
                                             percent: snapshot.data!=null?double.parse(snapshot.data.toString())/ 100:0.0, // here we're using the percentage to be in sync with the color of the text
-                                            center:  Text( //f.percentage.toString(),
+                                            center:  Text(
                                               snapshot.data!=null?snapshot.data.toString()+ "%": "",
                                                 style: new TextStyle(
                                                 fontWeight: FontWeight.bold,
@@ -642,24 +379,26 @@ class _FilePickerDemoState extends State<FilePickerDemo> {
    // if (isLoading == false) {
     try {
       print("try upload");
-      result =  await _simpleS3.uploadFile(
-        asset,
-        "poc-flutter",
-        "us-east-1:c17b7c5f-a98f-45fc-bd64-9183a551e031",
-        AWSRegions.usEast1,
-        debugLog: true,
-        s3FolderPath: "test",
-       // useTimeStamp: true,
-        accessControl: S3AccessControl.private,
-      );
-      print("result");
-      if(result!=null){
-        print("result not null");
-        setState(() {
-          x = true;
-          uploaded = true;
-          isLoading = false;
-        });
+      for(int i=0; i<1;i++) {
+        result = await _simpleS3.uploadFile(
+          asset,
+          "poc-flutter",
+          "us-east-1:c17b7c5f-a98f-45fc-bd64-9183a551e031",
+          AWSRegions.usEast1,
+          debugLog: true,
+          s3FolderPath: "test",
+          // useTimeStamp: true,
+          accessControl: S3AccessControl.private,
+        );
+        print("result");
+        if (result != null) {
+          print("result not null");
+          setState(() {
+            x = true;
+            uploaded = true;
+            isLoading = false;
+          });
+        }
       }
     } catch (e) {
       print(e);
